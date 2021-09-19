@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Binary Patcher</name>
+    </assembly>
+    <members>
+        <member name="M:BinaryPatcher.Utils.StringToBytesRaw(System.String)">
+            <summary>
+            Converts a string to byte array without encoding.
+            Ex.: "\xA1\x10" => 0xA1, 0x10
+            </summary>
+            <param name="input">String to convert.</param>
+            <returns>Byte representation of input string.</returns>
+        </member>
+        <member name="M:BinaryPatcher.Binary.FindAllStrings(System.String,System.String,System.Text.Encoding)">
+            <summary>
+            Mask wildcard is '?'. Ex.: "xxx??xx".
+            Mask is matched with the raw bytes, not string characters.
+            </summary>
+            <param name="matchString"></param>
+            <param name="encoding"></param>
+            <param name="mask"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryPatcher.Binary.ReplaceStrings(System.String,System.String,System.String,System.Text.Encoding,BinaryPatcher.ReplaceMode)">
+            <summary>
+            Mask wildcard is '?'. Ex.: "xxx??xx".
+            Mask is matched with the raw bytes, not string characters.
+            </summary>
+            <param name="matchString"></param>
+            <param name="newString"></param>
+            <param name="mask"></param>
+            <param name="encoding"></param>
+            <param name="replaceMode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryPatcher.Binary.FindAllBytes(System.Byte[],System.String)">
+            <summary>
+            Mask wildcard is '?'. Ex.: "xxx??xx".
+            </summary>
+            <param name="matchBytes"></param>
+            <param name="newBytes"></param>
+            <param name="mask"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BinaryPatcher.Binary.ReplaceBytes(System.Byte[],System.Byte[],System.String,BinaryPatcher.ReplaceMode)">
+            <summary>
+            Mask wildcard is '?'. Ex.: "xxx??xx".
+            </summary>
+            <param name="matchBytes"></param>
+            <param name="newBytes"></param>
+            <param name="mask"></param>
+            <param name="replaceMode"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

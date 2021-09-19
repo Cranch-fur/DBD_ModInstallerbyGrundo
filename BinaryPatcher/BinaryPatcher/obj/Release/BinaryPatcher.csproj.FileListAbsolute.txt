@@ -1,0 +1,5 @@
+C:\Users\spels\source\repos\DeadByDaylightModInstaller-main\BinaryPatcher\BinaryPatcher\bin\Release\BinaryPatcher.xml
+C:\Users\spels\source\repos\DeadByDaylightModInstaller-main\BinaryPatcher\BinaryPatcher\bin\Release\Binary Patcher.dll
+C:\Users\spels\source\repos\DeadByDaylightModInstaller-main\BinaryPatcher\BinaryPatcher\obj\Release\BinaryPatcher.csproj.AssemblyReference.cache
+C:\Users\spels\source\repos\DeadByDaylightModInstaller-main\BinaryPatcher\BinaryPatcher\obj\Release\BinaryPatcher.csproj.CoreCompileInputs.cache
+C:\Users\spels\source\repos\DeadByDaylightModInstaller-main\BinaryPatcher\BinaryPatcher\obj\Release\Binary Patcher.dll
