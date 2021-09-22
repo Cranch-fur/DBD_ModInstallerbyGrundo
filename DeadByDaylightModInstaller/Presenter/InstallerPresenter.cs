@@ -3,11 +3,7 @@ using Dead_By_Daylight_Mod_Installer.Services;
 using Dead_By_Daylight_Mod_Installer.Services.Interfaces;
 using Dead_By_Daylight_Mod_Installer.View;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Dead_By_Daylight_Mod_Installer.Presenter
@@ -39,7 +35,7 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
         public void DisplayCreator()
         {
             var creatorView = new CreatorForm();
-            
+
             var creatorPresenter = new CreatorPresenter(creatorView, new MessageBoxService(), new PickerService());
             creatorView.ShowDialog();
         }
@@ -47,9 +43,7 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
         public void InstallMod()
         {
             if (!Directory.Exists(settingsRepository.Settings.PaksPath))
-            {
                 return;
-            }
 
             var pickResult = pickerService.PickFilePath(out string modFilePath, "Json Mod Package|*.mjson", string.Empty);
             if (pickResult == Enums.PickResult.Ok)
@@ -77,17 +71,13 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
                 }
             }
             else if (pickResult == Enums.PickResult.None)
-            {
-                messageBoxService.ShowMessage("Mod Installer Can't get access to mod package file.");
-            }
+                messageBoxService.ShowMessage("Mod Installer Can't get access to mod package (.mjson) file.");
         }
 
         public void UninstallMod()
         {
             if (!Directory.Exists(settingsRepository.Settings.PaksPath))
-            {
                 return;
-            }
 
             var pickResult = pickerService.PickFilePath(out string modFilePath, "Json Mod Package|*.mjson", string.Empty);
             if (pickResult == Enums.PickResult.Ok)
@@ -114,7 +104,7 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
                     }
                 }
             }
-            else if(pickResult == Enums.PickResult.None)
+            else if (pickResult == Enums.PickResult.None)
             {
                 messageBoxService.ShowMessage("Mod Installer Can't get access to mod package file.");
             }
@@ -122,10 +112,8 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
 
         public void ChangePaksPath(string newPath)
         {
-            if(string.IsNullOrWhiteSpace(newPath))
-            {
+            if (string.IsNullOrWhiteSpace(newPath))
                 return;
-            }
 
             settingsRepository.Settings.PaksPath = newPath;
             settingsRepository.SaveSettings();

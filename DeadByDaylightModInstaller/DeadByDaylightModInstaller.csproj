@@ -114,13 +114,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="background.png" />
     <Content Include="icon.ico" />
     <None Include="IMG_TITLE.png" />
     <None Include="IMG_CREDITS.png" />
     <None Include="IMG_BACKGROUND_MODCREATOR.png" />
     <None Include="IMG_BACKGROUND.png" />
-    <None Include="background_creator.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BinaryPatcher\BinaryPatcher\BinaryPatcher.csproj">

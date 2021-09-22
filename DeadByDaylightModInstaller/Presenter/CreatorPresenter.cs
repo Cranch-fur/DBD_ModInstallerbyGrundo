@@ -5,9 +5,6 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dead_By_Daylight_Mod_Installer.Presenter
 {
@@ -27,7 +24,7 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
 
         public void PickPakFile()
         {
-            if(pickerService.PickFilePath(out string pakFilePath, "Pak file|*.pak", Globals.PakFolderPath) == Enums.PickResult.Ok)
+            if (pickerService.PickFilePath(out string pakFilePath, "Pak file|*.pak", Globals.PakFolderPath) == Enums.PickResult.Ok)
             {
                 view.PakFileName = Path.GetFileName(pakFilePath);
             }
@@ -51,10 +48,10 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
 
         public void CreateModPackage()
         {
-            if(string.IsNullOrWhiteSpace(view.ModTitle) || string.IsNullOrWhiteSpace(view.PakFileName)
+            if (string.IsNullOrWhiteSpace(view.ModTitle) || string.IsNullOrWhiteSpace(view.PakFileName)
                 || string.IsNullOrWhiteSpace(view.ModTitle) || string.IsNullOrWhiteSpace(view.PakFileName))
             {
-                messageBoxService.ShowMessage("One of the fields is empty");
+                messageBoxService.ShowMessage("Please, fill all the fields before packaging the mod!");
                 return;
             }
 
@@ -79,14 +76,14 @@ namespace Dead_By_Daylight_Mod_Installer.Presenter
                 {
                     File.WriteAllText(filePath, Compressor.Compress(JsonConvert.SerializeObject(modPackage)));
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     messageBoxService.ShowMessage(ex.Message);
                 }
             }
-            else if(pickResult == Enums.PickResult.None)
+            else if (pickResult == Enums.PickResult.None)
             {
-                messageBoxService.ShowMessage("Failed to get save file path");
+                messageBoxService.ShowMessage("Something went wrong with output directory you specified");
             }
         }
     }
